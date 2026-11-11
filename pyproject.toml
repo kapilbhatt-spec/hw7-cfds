@@ -7,7 +7,14 @@ authors = [
     { name = "kapilbhatt-spec", email = "kapilbhatt234@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "fastapi>=0.162.5",
+    "joblib>=1.6.0",
+    "pandas>=3.1.1",
+    "requests>=2.34.2",
+    "scikit-learn>=1.9.1",
+    "uvicorn>=0.54.0",
+]
 
 [project.scripts]
 hw7-cfds = "hw7_cfds:main"
