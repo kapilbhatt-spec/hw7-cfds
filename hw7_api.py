@@ -2,7 +2,7 @@ import joblib
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 
-model = joblib.load("joblib_pickle")
+model = joblib.load("model.joblib")
 
 app = FastAPI()
 
