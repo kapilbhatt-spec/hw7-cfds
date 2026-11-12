@@ -1,3 +1,5 @@
+"""Send input_example.json to the prediction API and print the result."""
+
 import json
 from pathlib import Path
 
@@ -12,7 +14,9 @@ try:
 
     response = requests.post(url, json=payload, timeout=10)
     response.raise_for_status()
-    print("Prediction:", response.json()["prediction"])
+    result = response.json()
+    print("Prediction:", result["prediction"])
+    print(f"Probability of diabetes: {result['probability']:.2f}")
 
 except requests.exceptions.ConnectionError:
     print("Could not connect. Is API working?")
