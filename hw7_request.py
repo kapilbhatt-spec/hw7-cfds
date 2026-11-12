@@ -1,10 +1,13 @@
 import json
+from pathlib import Path
 
 import requests
 
 url = "http://127.0.0.1:8000/predict"
+input_path = Path(__file__).resolve().parent / "input_example.json"
+
 try:
-    with open("input_example.json", encoding="utf-8") as input_file:
+    with open(input_path, encoding="utf-8") as input_file:
         payload = json.load(input_file)
 
     response = requests.post(url, json=payload, timeout=10)
